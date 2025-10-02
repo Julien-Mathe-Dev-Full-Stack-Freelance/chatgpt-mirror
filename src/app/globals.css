@@ -1,0 +1,84 @@
+/**
+ * @file src/app/globals.css
+ * @intro Styles globaux (Tailwind + Next.js)
+ * @description
+ * Palette et mode gérés via variables CSS (OKLCH) et scopes `.admin-theme` / `.site-theme`
+ * Couleurs shadcn/ui exposées via `theme inline` → utilities Tailwind (v4) prêtes à l’emploi.
+  * - Dark-mode pris en charge par ancêtre `.dark` OU localement via `.admin-theme.dark` / `.site-theme.dark`.
+ *
+ * @layer app/styles
+ * @remarks
+ * - Les palettes (ocean/violet/forest) modifient la brand scale `--brand-` puis mappent vers les tokens sémantiques.
+ * - Les couleurs utilisent OKLCH (meilleure perceptualité). Tester sur des navigateurs modernes.
+ * - Les variantes custom `admin-dark` / `site-dark` sont disponibles si besoin d’utilitaires ciblés.
+ * @todo
+ * - Ajouter un fallback sRGB si support OKLCH manquant (via @supports not (color: oklch(...))).
+ * - Étendre les tokens si de nouveaux composants UI l’exigent.
+ */
+
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "../styles/theme/index.css";
+
+/* variant utilitaire : permet d'écrire dark:... avec la classe .dark */
+/* @custom-variant dark (&:is(.dark &)); */
+/* variantes dark scoped */
+@custom-variant admin-dark (&:is(.admin-theme.dark &));
+@custom-variant site-dark (&:is(.site-theme.dark &));
+
+/* ==========================================================================
+    BASE LAYER — resets légers + ambiance
+    ========================================================================== */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Links suivent la brand */
+  a {
+    color: var(--primary);
+  }
+  a:hover {
+    color: oklch(from var(--primary) calc(l - 0.05) c h);
+  }
+
+  /* Sélection de texte teintée */
+  ::selection {
+    background: color-mix(in oklch, var(--ring), transparent 60%);
+    color: var(--foreground);
+  }
+
+  /* Scrollbar subtile (WebKit) */
+  *::-webkit-scrollbar {
+    width: 6px;
+    height: 10px;
+  }
+  *::-webkit-scrollbar-track {
+    background: var(--muted);
+  }
+  *::-webkit-scrollbar-thumb {
+    background: color-mix(in oklch, var(--primary), var(--muted) 70%);
+    border-radius: 999px;
+  }
+
+  /* Focus visible plus explicite */
+  :where(a, button, [role="button"], input, select, textarea):where(
+      :focus-visible
+    ) {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  /* ✅ Accessibilité — limiter les animations si l’utilisateur préfère moins de mouvement */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}

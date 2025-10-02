@@ -1,0 +1,42 @@
+/**
+ * @file src/styles/theme/palettes/radix/gray.css
+ * @intro Palettes Radix — gray
+ * @layer styles/theme
+ */
+
+/* Light */
+:where(.admin-theme, .site-theme)[data-theme="gray"] {
+  --brand-1: var(--gray-1);
+  --brand-2: var(--gray-2);
+  --brand-3: var(--gray-3);
+  --brand-4: var(--gray-4);
+  --brand-5: var(--gray-5);
+  --brand-6: var(--gray-6);
+  --brand-7: var(--gray-7);
+  --brand-8: var(--gray-8);
+  --brand-9: var(--gray-9);
+  --brand-10: var(--gray-10);
+  --brand-11: var(--gray-11);
+  --brand-12: var(--gray-12);
+}
+
+/* Dark — Radix dark files redefine the same tokens, we just keep mapping */
+:where(.dark)
+  :where(.admin-theme[data-theme="gray"], .site-theme[data-theme="gray"]),
+:where(
+    .admin-theme.dark[data-theme="gray"],
+    .site-theme.dark[data-theme="gray"]
+  ) {
+  --brand-1: var(--gray-1);
+  --brand-2: var(--gray-2);
+  --brand-3: var(--gray-3);
+  --brand-4: var(--gray-4);
+  --brand-5: var(--gray-5);
+  --brand-6: var(--gray-6);
+  --brand-7: var(--gray-7);
+  --brand-8: var(--gray-8);
+  --brand-9: var(--gray-9);
+  --brand-10: var(--gray-10);
+  --brand-11: var(--gray-11);
+  --brand-12: var(--gray-12);
+}

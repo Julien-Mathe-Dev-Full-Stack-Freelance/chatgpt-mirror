@@ -1,0 +1,87 @@
+/**
+ * @file src/styles/theme/brand-map.css
+ * @intro Brand scale (1..12) → semantic tokens (surfaces, actions, textes, borders)
+ */
+
+/* ──────────────────────────────────────────────────────────────────────────────
+   Surfaces par défaut (light & dark)
+   On ne duplique pas pour le dark : les fichiers Radix *-dark.css
+   basculent la valeur des --brand-* quand .dark est présent.
+   ──────────────────────────────────────────────────────────────────────────── */
+:where(.admin-theme, .site-theme) {
+  /* Surfaces */
+  --background: var(--brand-1); /* backgrounds (Radix 1) */
+  --foreground: var(--brand-12); /* accessible text (Radix 12) */
+
+  --card: var(--brand-1);
+  --card-foreground: var(--brand-12);
+
+  --popover: var(--brand-1);
+  --popover-foreground: var(--brand-12);
+
+  /* Rôles interactifs */
+  --primary: var(--brand-9); /* solid (Radix 9) */
+  --primary-foreground: var(--brand-12); /* texte contrasté sur 9 */
+
+  --secondary: var(--brand-4); /* interactive surfaces (4–5) */
+  --secondary-foreground: var(--brand-12);
+
+  --accent: var(--brand-3); /* léger highlight */
+  --accent-foreground: var(--brand-12);
+
+  --muted: var(--brand-2); /* subtle bg */
+  --muted-foreground: var(--brand-11); /* texte atténué mais lisible */
+
+  /* Bordures / focus */
+  --border: var(--brand-6); /* borders & separators (6) */
+  --input: var(--brand-6);
+  --ring: var(--brand-7); /* focus ring un peu plus dense (7) */
+
+  /* Destructive
+       Option A (monochrome, 100% brand-only) : on reste sur la palette active.
+  --destructive: var(--brand-10);
+  --destructive-foreground: var(--brand-12); */
+
+  /* Option B (classique UI) : utiliser le rouge Radix pour la cohérence sémantique :
+       Décommente si tu préfères : */
+  --destructive: var(--red-9);
+  --destructive-foreground: var(--red-12);
+
+  /* Charts (exemple) */
+  --chart-1: var(--brand-9);
+  --chart-2: var(--brand-10);
+  --chart-3: var(--brand-11);
+  --chart-4: var(--brand-6);
+  --chart-5: var(--brand-3);
+
+  /* Surfaces dérivées (facultatif mais pratique pour structurer une page) */
+  --surface-1: var(--brand-1); /* page */
+  --surface-2: var(--brand-2); /* panneaux légers */
+  --surface-3: var(--brand-3); /* barres/sections */
+  --border-subtle: var(--brand-5);
+  --border-strong: var(--brand-7);
+
+  /* Sidebar (si tu utilises) */
+  --sidebar-primary: var(--brand-9);
+  --sidebar-primary-foreground: var(--brand-12);
+  --sidebar-accent: var(--brand-3);
+  --sidebar-accent-foreground: var(--brand-12);
+  --sidebar-ring: var(--brand-7);
+}
+
+/* Fallback : si aucune palette n'est définie (pas de data-theme),
+     on branche la brand-scale sur Gray. */
+:where(.admin-theme:not([data-theme]), .site-theme:not([data-theme])) {
+  --brand-1: var(--gray-1);
+  --brand-2: var(--gray-2);
+  --brand-3: var(--gray-3);
+  --brand-4: var(--gray-4);
+  --brand-5: var(--gray-5);
+  --brand-6: var(--gray-6);
+  --brand-7: var(--gray-7);
+  --brand-8: var(--gray-8);
+  --brand-9: var(--gray-9);
+  --brand-10: var(--gray-10);
+  --brand-11: var(--gray-11);
+  --brand-12: var(--gray-12);
+}

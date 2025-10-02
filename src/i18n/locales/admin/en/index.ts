@@ -1,0 +1,26 @@
+/**
+ * @file src/i18n/locales/admin/en/index.ts
+ * @intro i18n — admin catalogues (Identity)
+ */
+
+import common from "@/i18n/locales/admin/en/common";
+import header from "@/i18n/locales/admin/en/header";
+import identity from "@/i18n/locales/admin/en/identity";
+import media from "@/i18n/locales/admin/en/media";
+import menu from "@/i18n/locales/admin/en/menu";
+import shell from "@/i18n/locales/admin/en/shell";
+import social from "@/i18n/locales/admin/en/social";
+import theme from "@/i18n/locales/admin/en/theme";
+
+const enAdmin = {
+  ...common,
+  ...identity,
+  ...media,
+  ...theme,
+  ...shell,
+  ...header,
+  ...menu,
+  ...social,
+} as const;
+
+export default enAdmin;

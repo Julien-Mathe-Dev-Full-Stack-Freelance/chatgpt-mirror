@@ -1,0 +1,42 @@
+/**
+ * @file src/styles/theme/palettes/radix/red.css
+ * @intro Palettes Radix — red
+ * @layer styles/theme
+ */
+
+/* Light */
+:where(.admin-theme, .site-theme)[data-theme="red"] {
+  --brand-1: var(--red-1);
+  --brand-2: var(--red-2);
+  --brand-3: var(--red-3);
+  --brand-4: var(--red-4);
+  --brand-5: var(--red-5);
+  --brand-6: var(--red-6);
+  --brand-7: var(--red-7);
+  --brand-8: var(--red-8);
+  --brand-9: var(--red-9);
+  --brand-10: var(--red-10);
+  --brand-11: var(--red-11);
+  --brand-12: var(--red-12);
+}
+
+/* Dark — Radix dark files redefine the same tokens, we just keep mapping */
+:where(.dark)
+  :where(.admin-theme[data-theme="red"], .site-theme[data-theme="red"]),
+:where(
+    .admin-theme.dark[data-theme="red"],
+    .site-theme.dark[data-theme="red"]
+  ) {
+  --brand-1: var(--red-1);
+  --brand-2: var(--red-2);
+  --brand-3: var(--red-3);
+  --brand-4: var(--red-4);
+  --brand-5: var(--red-5);
+  --brand-6: var(--red-6);
+  --brand-7: var(--red-7);
+  --brand-8: var(--red-8);
+  --brand-9: var(--red-9);
+  --brand-10: var(--red-10);
+  --brand-11: var(--red-11);
+  --brand-12: var(--red-12);
+}

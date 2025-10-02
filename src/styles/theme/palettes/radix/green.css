@@ -1,0 +1,42 @@
+/**
+ * @file src/styles/theme/palettes/radix/green.css
+ * @intro Palettes Radix — green
+ * @layer styles/theme
+ */
+
+/* Light */
+:where(.admin-theme, .site-theme)[data-theme="green"] {
+  --brand-1: var(--green-1);
+  --brand-2: var(--green-2);
+  --brand-3: var(--green-3);
+  --brand-4: var(--green-4);
+  --brand-5: var(--green-5);
+  --brand-6: var(--green-6);
+  --brand-7: var(--green-7);
+  --brand-8: var(--green-8);
+  --brand-9: var(--green-9);
+  --brand-10: var(--green-10);
+  --brand-11: var(--green-11);
+  --brand-12: var(--green-12);
+}
+
+/* Dark — Radix dark files redefine the same tokens, we just keep mapping */
+:where(.dark)
+  :where(.admin-theme[data-theme="green"], .site-theme[data-theme="green"]),
+:where(
+    .admin-theme.dark[data-theme="green"],
+    .site-theme.dark[data-theme="green"]
+  ) {
+  --brand-1: var(--green-1);
+  --brand-2: var(--green-2);
+  --brand-3: var(--green-3);
+  --brand-4: var(--green-4);
+  --brand-5: var(--green-5);
+  --brand-6: var(--green-6);
+  --brand-7: var(--green-7);
+  --brand-8: var(--green-8);
+  --brand-9: var(--green-9);
+  --brand-10: var(--green-10);
+  --brand-11: var(--green-11);
+  --brand-12: var(--green-12);
+}
