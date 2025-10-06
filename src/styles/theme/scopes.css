@@ -1,0 +1,13 @@
+/**
+ * @file src/styles/theme/scopes.css
+ * @intro Scopes (dark mode + tokens non-couleur)
+ */
+
+:root {
+  color-scheme: light dark;
+}
+
+/* Scope admin/site : on peut y mettre les tokens non-couleur (rayons, etc.) */
+:where(.admin-theme, .site-theme) {
+  --radius: 0.625rem;
+}

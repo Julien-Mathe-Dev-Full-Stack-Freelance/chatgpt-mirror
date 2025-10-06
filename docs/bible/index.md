@@ -1,0 +1,29 @@
+- Infra
+  - HTTP
+    - [HTTP — Error Adapter (SoT)](./infra/http/error-adapter.md)
+- Domain
+  - Blocks
+    - [Blocs — SoT](./domain/blocks/README.md)
+      - [Constants (src/core/domain/blocks/constants.ts)](./domain/blocks/README.md#constants)
+  - IDs
+    - [IDs — SoT (générateur & schémas)](./domain/ids/README.md)
+      - [Generator](./domain/ids/README.md#generator)
+      - [Schema](./domain/ids/README.md#schema)
+  - IDs — SoT
+    - [Overview (SoT)](./domain/ids/README.md)
+    - [Toolkits (src/core/domain/ids/tools.ts)](./domain/ids/id-tools.md)
+  - Errors
+    - [Errors — SoT (codes & classe d’erreur)](./domain/errors/README.md)
+      - [Codes](./domain/errors/README.md#codes)
+      - [DomainError](./domain/errors/README.md#domain-error)
+      - [Issue types](./domain/errors/README.md#issue-types)
+  - Entities
+    - [Entities — SoT (IDs stables)](./domain/entities/README.md)
+- Domain
+  - Constants
+    - [Constants — SoT](./domain/constants/README.md)
+      - [Common (src/core/domain/constants/common.ts)](./domain/constants/README.md#common)
+      - [Layout (src/core/domain/constants/layout.ts)](./domain/constants/README.md#layout)
+      - [Limits (src/core/domain/constants/limits.ts)](./domain/constants/README.md#limits)
+      - [Theme (src/core/domain/constants/theme.ts)](./domain/constants/README.md#theme)
+      - [Urls (src/core/domain/constants/urls.ts)](./domain/constants/README.md#urls)

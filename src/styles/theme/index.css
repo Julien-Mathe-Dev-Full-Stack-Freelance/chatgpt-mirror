@@ -1,0 +1,29 @@
+/**
+ * @file src/styles/theme/index.css
+ * @intro Styles thème (palettes, tailwind classes, etc.)
+ * @layer styles/theme
+ */
+
+/* Radix depuis node_modules : OK */
+@import "@radix-ui/colors/gray.css";
+@import "@radix-ui/colors/gray-dark.css";
+@import "@radix-ui/colors/red.css";
+@import "@radix-ui/colors/red-dark.css";
+@import "@radix-ui/colors/purple.css";
+@import "@radix-ui/colors/purple-dark.css";
+@import "@radix-ui/colors/blue.css";
+@import "@radix-ui/colors/blue-dark.css";
+@import "@radix-ui/colors/green.css";
+@import "@radix-ui/colors/green-dark.css";
+
+/* ⛔️ remplace "@/..." par des relatifs */
+@import "./tokens.css";
+@import "./scopes.css";
+@import "./brand-map.css";
+
+/* Palettes Radix → brand scale (relatifs) */
+@import "./palettes/radix/gray.css";
+@import "./palettes/radix/red.css";
+@import "./palettes/radix/purple.css";
+@import "./palettes/radix/blue.css";
+@import "./palettes/radix/green.css";

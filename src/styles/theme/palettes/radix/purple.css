@@ -1,0 +1,42 @@
+/**
+ * @file src/styles/theme/palettes/radix/purple.css
+ * @intro Palettes Radix — purple
+ * @layer styles/theme
+ */
+
+/* Light */
+:where(.admin-theme, .site-theme)[data-theme="purple"] {
+  --brand-1: var(--purple-1);
+  --brand-2: var(--purple-2);
+  --brand-3: var(--purple-3);
+  --brand-4: var(--purple-4);
+  --brand-5: var(--purple-5);
+  --brand-6: var(--purple-6);
+  --brand-7: var(--purple-7);
+  --brand-8: var(--purple-8);
+  --brand-9: var(--purple-9);
+  --brand-10: var(--purple-10);
+  --brand-11: var(--purple-11);
+  --brand-12: var(--purple-12);
+}
+
+/* Dark — Radix dark files redefine the same tokens, we just keep mapping */
+:where(.dark)
+  :where(.admin-theme[data-theme="purple"], .site-theme[data-theme="purple"]),
+:where(
+    .admin-theme.dark[data-theme="purple"],
+    .site-theme.dark[data-theme="purple"]
+  ) {
+  --brand-1: var(--purple-1);
+  --brand-2: var(--purple-2);
+  --brand-3: var(--purple-3);
+  --brand-4: var(--purple-4);
+  --brand-5: var(--purple-5);
+  --brand-6: var(--purple-6);
+  --brand-7: var(--purple-7);
+  --brand-8: var(--purple-8);
+  --brand-9: var(--purple-9);
+  --brand-10: var(--purple-10);
+  --brand-11: var(--purple-11);
+  --brand-12: var(--purple-12);
+}
